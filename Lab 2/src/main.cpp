@@ -76,7 +76,8 @@ int main() {
 
         	std::cout << '\n';
 		} else {                   // Parent
-			std::cin >> s;
+			std::string s;
+			std::getline(std::cin, s);
 			std::cout << "Parent in: " << s << "\n\n";
 			write(pipefd_p1[1], &s, sizeof(std::string));
 			close(pipefd_p1[0]);
@@ -87,6 +88,7 @@ int main() {
 
         	close(pipefd_2p[0]);
         	close(pipefd_2p[1]);
+
 		}
 
 	}
